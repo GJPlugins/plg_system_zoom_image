@@ -21,8 +21,12 @@
 
 	<!-- Plugin files -->
 	<files>
-		<filename plugin="plg_system_zoom_image">plg_system_zoom_image.php</filename>
+		<folder>Helpers</folder>
 		<folder>language</folder>
+		<folder>Models</folder>
+		<filename>LICENSE</filename>
+		<filename plugin="plg_system_zoom_image">plg_system_zoom_image.php</filename>
+		<filename>plg_system_zoom_image_update.xml</filename>
 	</files>
 
 	<!-- Config parameter -->
@@ -42,6 +46,6 @@
 
 	<!-- Update servers -->
 	<updateservers>
-		<server type="extension" priority="1" name="plg_system_zoom_image">https://www.example.com/plg_plg_system_zoom_image.xml</server>
+		<server type="extension" priority="1" name="plg_system_zoom_image">https://raw.githubusercontent.com/GJPlugins/plg_system_zoom_image/master/plg_system_zoom_image_update.xml</server>
 	</updateservers>
 </extension>
