@@ -1,0 +1,321 @@
+/*
+Step 1
+======
+
+Style your page (the product list)
+
+*/
+
+.product {
+    float: left;
+    margin: 10px;
+}
+
+.product .product-images,
+.product .product-form {
+    display: none;
+}
+
+/*
+
+Step 2
+======
+
+Reposition and redesign fancyBox blocks
+
+*/
+
+/* This elements contains both blocks */
+.fancybox-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-width: 800px;
+    max-height: 600px;
+}
+
+/* Left block will contain the gallery */
+.Quick-Product-View .fancybox-stage {
+    width: 52%;
+    background: #fff;
+}
+
+/* Right block - close button and the form */
+.fancybox-form-wrap {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 40px;
+    width: 48%;
+    background: #fff;
+}
+
+/* Add vertical lines */
+.fancybox-form-wrap::before,
+.fancybox-form-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.fancybox-form-wrap::before {
+    width: 8px;
+    background: #f4f4f4;
+}
+
+.fancybox-form-wrap::after {
+    width: 1px;
+    background: #e9e9e9;
+}
+
+/* Set position and colors for close button */
+.fancybox-button--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #F0F0F0;
+    color: #222;
+    padding: 7px;
+}
+
+.fancybox-button:hover {
+    /* color: #111; */
+    /* background: #e4e4e4; */
+}
+
+.fancybox-button svg path {
+    stroke-width: 1;
+}
+.Quick-Product-View .fancybox-button--close{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1000000;
+}
+.fancybox-navigation{
+    /* position: absolute; */
+    /* height: 100%; */
+    /* width: 25px; */
+}
+.fancybox-navigation .fancybox-button{
+    background: none;
+
+}
+.fancybox-navigation .fancybox-button--arrow_left{
+    left: 0;
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    /* padding-left: 0px; */
+    padding: 31px 6px 31px 6px;
+}
+
+
+
+
+
+/* Set position of the form */
+.fancybox-inner .product-form {
+    overflow: auto;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 50px;
+    left: 0;
+    padding: 0 50px;
+    text-align: center;
+}
+
+
+/*
+
+Step 3
+======
+
+Tweak fade animation
+
+*/
+
+.fancybox-inner {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.fancybox-is-open .fancybox-inner {
+    opacity: 1;
+}
+
+.fancybox-is-closing .fancybox-fx-fade {
+    opacity: 1 !important; /* Prevent double-fading */
+}
+
+/*
+
+Step 2
+======
+
+Bullet navigation design
+
+*/
+.product-bullets {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 99999;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.product-bullets li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product-bullets li a {
+    display: block;
+    height: 30px;
+    width: 20px;
+    position: relative;
+}
+
+.product-bullets li a span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 99px;
+    text-indent: -99999px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+.product-bullets li.active a span {
+    background: #FF6666;
+}
+.fancybox-button--close {
+    color: #222;
+    background: #F0F0F0;
+    padding: 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index : 9000 ;
+
+}
+.fancybox-button svg {
+    display: block;
+    position: relative;
+    overflow: visible;
+    shape-rendering: geometricPrecision;
+    fill: #3e77aa;
+}
+.fancybox-button:hover svg{
+    fill: #ff6566;
+}
+.fancybox-button svg path {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+.fancybox-button svg path {
+    stroke-width: 2;
+}
+.Quick-Product-View{}
+.Quick-Product-View h3{}
+.Quick-Product-View .product-bullets+.heading{
+    position: absolute;
+    top: 15px;
+    margin: 0 45px;
+    padding: 0 5px;
+    text-align: center;
+}
+.Quick-Product-View .product-bullets+.heading h3{
+    font-size: 13px;
+    width: 100%;
+    margin: 0 0 4px 0;
+}
+.Quick-Product-View .product-bullets+.heading .sub-head{
+    font-size: 10px;
+}
+.Quick-Product-View .wrp-product-prices{
+    position: absolute;
+    left: 0;
+    bottom: 41px;
+    width: 100%;
+    text-align: center;
+    z-index: 99999;
+}
+.Quick-Product-View .wrp-product-prices .product-prices__big{
+    display: inline-block;
+    padding: 0 13px 0px 0px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.Quick-Product-View.fancybox-is-zoomable.fancybox-can-pan .fancybox-stage .fancybox-button--close,
+.Quick-Product-View.fancybox-is-zoomable.fancybox-can-pan .product-bullets+.heading ,
+.Quick-Product-View.fancybox-is-zoomable.fancybox-can-pan .fancybox-stage .wrp-product-prices,
+.Quick-Product-View.fancybox-is-zoomable.fancybox-can-pan .fancybox-stage .product-bullets,
+.Quick-Product-View.fancybox-is-zoomable.fancybox-can-pan .fancybox-stage .fancybox-navigation{
+    display: none;
+}
+@media (min-width: 768px)   {
+    .Quick-Product-View{}
+    .Quick-Product-View .product-bullets+.heading,
+    .Quick-Product-View .wrp-product-prices,
+    .Quick-Product-View .fancybox-stage .fancybox-button--close{
+        display: none;
+    }
+
+}
+@media (max-width: 767px)   {
+    .Quick-Product-View .fancybox-inner{
+        height: 100%;
+        max-height: 100%;
+    }
+    .Quick-Product-View .fancybox-stage{
+        width: 100%;
+        height: 100%;
+    }
+    .Quick-Product-View .fancybox-form-wrap{
+        display: none;
+    }
+
+    .Quick-Product-View .product-bullets+.heading .sub-head{
+        font-size: 18px;
+    }
+    .Quick-Product-View .wrp-product-prices{
+        bottom: 64px;
+    }
+    .Quick-Product-View .product-bullets+.heading h3,
+    .Quick-Product-View .wrp-product-prices .product-price ,
+    .Quick-Product-View .wrp-product-prices .AddToCart
+    {
+        font-size: 21px;
+    }
+}
+@media (max-width: 361px)   {
+    .Quick-Product-View .product-bullets+.heading h3{
+        font-size: 17px;
+    }
+    .Quick-Product-View .product-bullets+.heading .sub-head{
+        font-size: 16px;
+    }
+    .Quick-Product-View .wrp-product-prices {
+        bottom: 81px;
+    }
+}
+

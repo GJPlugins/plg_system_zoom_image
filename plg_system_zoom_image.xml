@@ -24,6 +24,7 @@
 		<folder>Helpers</folder>
 		<folder>language</folder>
 		<folder>Models</folder>
+		<folder>tmpl</folder>
 		<filename>LICENSE</filename>
 		<filename plugin="plg_system_zoom_image">plg_system_zoom_image.php</filename>
 		<filename>plg_system_zoom_image_update.xml</filename>
@@ -33,13 +34,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field
-					name="sample"
-					type="text"
-					default="42"
-					label="PLG_SYSTEM_PLG_SYSTEM_ZOOM_IMAGE_SAMPLE_LABEL"
-					description="PLG_SYSTEM_PLG_SYSTEM_ZOOM_IMAGE_SAMPLE_DESCRIPTION"
-				/>
+
 			</fieldset>
 		</fields>
 	</config>
